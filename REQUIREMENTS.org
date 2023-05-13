@@ -1,0 +1,59 @@
+#+author: Pramudya Arya Wicaksana
+#+TITLE: Qoin Backend Test
+#+EMAIL: pram.aryawcksn@gmail.com
+#+SUBTITLE: Backend test for applying to Qoin
+#+PROPERTY: header-args:emacs-lisp :tangle ./init.el :mkdirp yes
+#+property: header-args:shell :tangle "setup.sh"
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper, 12pt]
+#+startup: fold
+#+STARTUP: inlineimages
+#+SETUPFILE: ~/.emacs.d/report-setup.org
+
+
+* Requirements
+** Database Mysql
+
+- The application should have a database schema that includes tables for Customers, Orders, Menu Items, Categories, Order Items, Purchase Receipts, Income Reports, and Stock Reports.
+- The Customers table should have columns for id, name, phone, email, and loyalty_status.
+- The Orders table should have columns for id, order_date, customer_id (foreign key to Customers table), and total_price.
+- The Menu Items table should have columns for id, name, description, price, category_id (foreign key to Categories table), and availability_status.
+- The Categories table should have columns for id and name.
+- The Order Items table should have columns for id, order_id (foreign key to Orders table), menuitem_id (foreign key to Menu Items table), quantity, and subtotal.
+- The Purchase Receipts table should have columns for id, purchase_date, customer_id (foreign key to Customers table), order_id (foreign key to Orders table), and total_price.
+- The Income Reports table should have columns for id, date_range, total_sales, total_expenses, and net_income.
+- The Stock Reports table should have columns for id, item_id (foreign key to Menu Items table), stock_level, stock_in, and stock_out.
+
+** Backend Golang
+
+- The backend should use Golang as the programming language.
+- The backend should include RESTful API endpoints for creating, reading, updating, and deleting data from the database.
+- The backend should include middleware for handling authentication and authorization of API requests.
+- The backend should include database connection pooling to manage database connections efficiently.
+- The backend should use a web framework such as Gin or Echo for handling API requests and responses.
+- The backend should use a database driver for MySQL such as "go-sql-driver/mysql" for communicating with the MySQL database
+
+** Frontend ReactJS
+
+- The backend should use Golang as the programming language.
+- The backend should include RESTful API endpoints for creating, reading, updating, and deleting data from the database.
+- The backend should include middleware for handling authentication and authorization of API requests.
+- The backend should include database connection pooling to manage database connections efficiently.
+- The backend should use a web framework such as Gin or Echo for handling API requests and responses.
+- The backend should use a database driver for MySQL such as "go-sql-driver/mysql" for communicating with the MySQL database.
+
+* Diagram
+
+[[/home/aya/Sandbox/mermaid-diagram-2023-05-14-033138.png]]
+
+* Conclusion
+
+Based on the requirements and flow of the restaurant application, using MySQL, Golang, and ReactJS as the technology stack offers several advantages:
+
+- MySQL is a popular and robust open-source relational database management system that is widely used in web applications. It provides efficient data storage, indexing, and querying, which is crucial for the restaurant application's requirements of managing customers, orders, menu items, and reports.
+
+- Golang is a modern and efficient programming language that is designed for building large-scale web applications. It offers strong typing, concurrency, and memory safety, which makes it well-suited for building backend services for the restaurant application. Golang also has excellent performance and low latency, which is crucial for processing large amounts of data.
+
+- ReactJS is a popular and efficient JavaScript library for building user interfaces. It offers reusable and modular components, which makes it easier to build and maintain complex user interfaces. ReactJS also offers excellent performance, which is important for the restaurant application's requirements of handling real-time data updates and rendering data-intensive reports.
+
+Overall, the combination of MySQL, Golang, and ReactJS provides a powerful and efficient technology stack for building a robust, scalable, and user-friendly restaurant application.
